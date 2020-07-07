@@ -1,0 +1,170 @@
+@import "../../App.scss";
+@import "../reuseable-styling/mixins";
+
+.header {
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  box-sizing: border-box;
+  background-color: $colordarkest;
+
+  @include tabletSize {
+    justify-content: flex-start;
+    height: 68px;
+  }
+
+  @include desktopSize {
+    height: 69px;
+    padding: 15px 148px;
+  }
+
+  &__logo {
+    height: 23px;
+    width: 100%;
+    object-fit: contain;
+    margin: 15px auto;
+
+    @include tabletSize {
+      width: auto;
+      margin: 0 65px 8px 0;
+    }
+
+    @include desktopSize {
+      height: 15px;
+      margin: 0px 5.5% 10px 0;
+    }
+
+    &-image {
+      width: 100%;
+      height: 23px;
+      margin: 0 auto;
+
+      @include tabletSize {
+        width: auto;
+        height: 22px;
+        margin-top: 3px;
+        margin-left: 20px;
+      }
+  
+      @include desktopSize {
+        object-fit: contain;
+        height: 16px;
+        margin: 0px 1% 15px 0;
+      }
+    }
+  }
+
+  &__inventory {
+    font-size: 18px;
+    font-weight: 500;
+    width: 50%;
+    height: 50px;
+    padding: 9px 0;
+    text-align: center;
+    border-bottom: 4px solid $colordarkest;
+
+    @include tabletSize {
+      align-self: flex-start;
+      width: 12%;
+      height: auto;
+      margin: 0 35px 0 0px;
+      padding: 23px 0;
+      font-size: 15px;
+    }
+
+    @include desktopSize {
+      width: 7%;
+      margin-left: 0px;
+      margin-right: 45px;
+      padding: 18px 0;
+      font-size: 12px;
+    }
+
+    &--active {
+      font-size: 18px;
+      font-weight: 500;
+      width: 50%;
+      height: 50px;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 4px solid white;
+
+      @include tabletSize {
+        align-self: flex-start;
+        width: 12%;
+        height: auto;
+        margin: 0 35px 0 0px;
+        padding: 23px 0;
+        font-size: 15px;
+      }
+  
+      @include desktopSize {
+        width: 7%;
+        margin-left: 0px;
+        margin-right: 45px;
+        padding: 18px 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__locations {
+    font-size: 18px;
+    font-weight: 500;
+    width: 50%;
+    height: 50px;
+    padding: 9px 0;
+    text-align: center;
+    border-bottom: 4px solid $colordarkest;
+
+    @include tabletSize {
+      align-self: flex-start;
+      width: 12%;
+      height: auto;
+      margin: 0 8px 0 0px;
+      padding: 23px 0;
+      font-size: 15px;
+    }
+
+    @include desktopSize {
+      width: 7%;
+      margin-left: 0px;
+      margin-right: 25px;
+      padding: 18px 0;
+      font-size: 12px;
+    }
+
+    &--active {
+      font-size: 18px;
+      font-weight: 500;
+      width: 50%;
+      height: 50px;
+      padding: 8px 0;
+      text-align: center;
+      border-bottom: 4px solid white;
+
+      @include tabletSize {
+        align-self: flex-start;
+        width: 12%;
+        height: auto;
+        margin: 0 35px 0 0px;
+        padding: 23px 0;
+        font-size: 15px;
+      }
+  
+      @include desktopSize {
+        width: 7%;
+        margin-left: 0px;
+        margin-right: 45px;
+        padding: 18px 0;
+        font-size: 12px;
+      }
+    }
+  }
+  
+
+}
+
