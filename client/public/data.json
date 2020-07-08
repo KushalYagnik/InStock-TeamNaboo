@@ -1,0 +1,20 @@
+[
+    {
+            "warehouse": "Warehouse Number 1",
+            "address": "469 King St W, Toronto, ON",
+            "contact": "Mara Weinberg",
+            "position": "Warehouse Manager",
+            "phone": "+1 416 678 2345",
+            "email": "weinberg@instack.com",
+            "description": "Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation"
+    },
+    {
+        "warehouse": "Warehouse Number 1",
+        "address": "469 King St W, Toronto, ON",
+        "contact": "Mara Weinberg",
+        "position": "Warehouse Manager",
+        "phone": "+1 416 678 2345",
+        "email": "weinberg@instack.com",
+        "description": "Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation"
+    }
+]
