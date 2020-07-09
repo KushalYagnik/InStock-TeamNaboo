@@ -11,9 +11,9 @@ const PORT = 8080;
 
 // routes
 app.use('/', require('../server/src/routes/inventoryRoutes'));
+
 // warehouse routes can go here
-
-
+app.use('/locations', require('../server/src/routes/locationRoutes'));
 
 
 app.listen(8080, (error) => {
