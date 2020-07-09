@@ -32,7 +32,7 @@ export class InventoryItems extends Component {
                         </div>
                         <div className="inventory__status">
                             <div className="inventory__status-label lbl">Status</div>
-                            <div className="inventory__status-status">{item.isInstock.toString()}</div>
+                            <div className="inventory__status-status">{item.isInstock ? 'In Stock':'Out of Stock'}</div>
                         </div>
                     </Link>
                     <Kebab/>
