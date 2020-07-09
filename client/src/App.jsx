@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Inventory from './pages/Inventory.jsx'
 
+
 export default function App() {
   return (
     <BrowserRouter>
