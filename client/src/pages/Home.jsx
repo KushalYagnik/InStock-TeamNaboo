@@ -9,8 +9,8 @@ export default function Home() {
     return (
         <div className="home-container">
             <Header />
-            <LocationsSearch />
             <WarehouseModal />
+            <LocationsSearch />
         </div>
     )
   }

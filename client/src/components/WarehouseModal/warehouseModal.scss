@@ -5,6 +5,21 @@
     font-family: Avenir Next LT Pro;
 
     &__select{
+        background-color: #004892;
+        padding: 5px;
+        border: none;
+        box-shadow: none;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        margin-top: 360px;
+        margin-left:275px;
+
+        &--img{
+            width: 25px;
+            height: auto;
+        }
 
     }
     &__title{

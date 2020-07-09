@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
-import './warehouseModal.scss'
-import Modal from 'react-modal'
+import React, { useState } from 'react';
+import './warehouseModal.scss';
+import Modal from 'react-modal';
+import add from '../../assets/Icons/SVG/Icon-add.svg';
 
 Modal.setAppElement('#root')
 
 export default function WarehouseModal() {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
+        <div>
+            <div className="modalW__select--containter">
+            <button className="modalW__select" onClick={() => setModalIsOpen(true)}><img className="modalW__select--img" src={add} /></button>
+            </div>
         <div className="modalW">
-            <button className="modalW__select" onClick={() => setModalIsOpen(true)}></button>
             <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}> 
                 <h2 className="modalW__title">Add New</h2>
                 <form className="modalW__form" action="">
@@ -35,6 +39,7 @@ export default function WarehouseModal() {
 
                 </form>
             </Modal>
+        </div>
         </div>
     )
 }
