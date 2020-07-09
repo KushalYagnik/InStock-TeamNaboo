@@ -1,0 +1,25 @@
+@import "../App.scss";
+@import "../components/reuseable-styling/mixins";
+
+.inventory__header{
+    margin: 1em;
+    width: 100%;
+    &-title{
+        font-size: 2em;
+        font-weight: 600;
+        color: $colordarkest;
+    }
+    &-searchbox{
+        width: 90%;
+        height: 60px;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding-left: 35px;
+        border: 2px solid $colormid;
+        background-color: $colorlight;
+        background-image: url('../assets/Icons/SVG/Icon-search.svg');
+        background-repeat: no-repeat;
+        background-position: center left 10px;
+        font-size: 14px;
+    }
+}
