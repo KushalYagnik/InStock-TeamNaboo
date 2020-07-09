@@ -18,8 +18,8 @@ export default function WarehouseModal() {
   const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("")
   const [itemDesc, setDesc] = useState("")
-  let warehouse = []
   
+  const sendUpload = () => {
   axios
     .post('/locations.json', {
       "nameId": nameId,
@@ -31,9 +31,9 @@ export default function WarehouseModal() {
       "email": email,
       "itemDesc": itemDesc,
     }, {headers: {'Content-Type': 'application/json'}})
-    .then(res => {warehouse = res.data})
+    .then(res => {res.data})
     .catch(err => console.error(err))
-  
+  }
 
   return (
       <div>
@@ -65,7 +65,7 @@ export default function WarehouseModal() {
               </div>
               <textarea className="modalW__form--textArea" name="Item" placeholder="Use commas to separate each category"></textarea>
               <div className="modalW__form--containerButtons">
-              <button className="modalW__form--save">save</button>
+              <button className="modalW__form--save" onClick={sendUpload}>Save</button>
               <button className="modalW__form--cancel" onClick={() => setModalIsOpen(false)}>Cancel</button>
               </div>
               </form>
