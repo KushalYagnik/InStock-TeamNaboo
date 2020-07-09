@@ -11,11 +11,11 @@ export class InventoryItems extends Component {
 
     removeHandler = (e) => {
         e.preventDefault();
-
+        
         axios.delete('/inventory.json')
         .then(res =>{
-            console.log(res);
-        })
+            console.log(res)
+        }).catch(error => console.log(error));
     }
 
     
