@@ -1,0 +1,48 @@
+@import "../../App.scss";
+@import "../reuseable-styling/mixins";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.lbl{
+    text-transform: uppercase;
+    color: $colordark;
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: bolder;
+}
+.inventory__unit > * {
+    color: black;
+    margin: 1em 0;
+}
+.inventory{
+    margin: 1em;
+    font-size: 15px;
+    line-height: 21px;
+    border-bottom: 1px solid $colormid;
+    &__unit{
+        margin: 1em;
+    }
+    &__item{
+        &-name{
+            font-weight: bold;
+            margin: 1em 0;
+        }
+        &-description{}
+    }
+    &__date{
+        &-date{}
+    }
+    &__location{
+        &-city{}
+    }
+    &__quantity{
+        &-amount{}
+    }
+    &__status{
+        &-status{}
+    }
+}
