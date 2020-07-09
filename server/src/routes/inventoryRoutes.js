@@ -7,8 +7,8 @@ const warehouseList = require('../data/locations.json');
 // route goes here
 
 // get a specific inventory item
-router.get('/inventory/:id', (req, res) => {
-    const targetInventoryItem = inventoryList.find((object) => object.id == req.params.id);
+router.get('/inventory/:inventoryid', (req, res) => {
+    const targetInventoryItem = inventoryList.find((object) => object.id == req.params.inventoryid);
 
     if (targetInventoryItem) {
       res.status(200).json(targetInventoryItem);
@@ -20,9 +20,9 @@ router.get('/inventory/:id', (req, res) => {
   });
 
 // delete a specific inventory item
-router.delete('/inventory/:id', (req, res) => {
-  const targetInventoryItem = inventoryList.find((object) => object.id === req.params.id);
-  const targetInventoryItemIndex = inventoryList.findIndex((object) => object.id === req.params.id);
+router.delete('/inventory/:inventoryid', (req, res) => {
+  const targetInventoryItem = inventoryList.find((object) => object.id === req.params.inventoryid);
+  const targetInventoryItemIndex = inventoryList.findIndex((object) => object.id === req.params.inventoryid);
 
   if (targetInventoryItem) {
       inventoryList.splice(targetInventoryItemIndex,1);
