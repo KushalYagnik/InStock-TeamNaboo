@@ -37,8 +37,9 @@ export default class ProductSummary extends React.Component {
   };
 
   // componentDidMount() {
-  //   let inventoryId = this.props.match.params.id;
-
+  //   let inventoryId = this.props.match.params.inventoryid;
+  //   let warehouseId = this.props.match.params.warehouseid;
+  //
   //   axios
   //     .get(
   //       `http://localhost:8080/inventory/${inventoryId}`
@@ -49,14 +50,25 @@ export default class ProductSummary extends React.Component {
   //       });
   //     });
   // }
+  //   axios
+  //     .get(
+  //       `http://localhost:8080/locations/${warehouseId}`
+  //     )
+  //     .then(res => {
+  //       this.setState({
+  //         warehouse: res.data
+  //       });
+  //     });
+  // }
+
   render() {
     let productQuantity = this.state.product.quantity;
 
     return (
       <section className="product">
-        <div className="product__header">
-          <div className="product__top-container">
-            <div className="product__title-container">
+        <div className="product__header-container">
+          <div className="product__header-container--top">
+            <div className="product__header-container--title">
               {/* <Link to="/inventory"> */}
               <img
                 className="product__back-arrow"
@@ -69,18 +81,18 @@ export default class ProductSummary extends React.Component {
               </h1>
             </div>
             <div
-              className="product__stock-in"
+              className="product__stock--in"
               style={
-                productQuantity > 0 ? { display: "inline" } : { display: "none" }
+                productQuantity > 0 ? { display: "flex" } : { display: "none" }
               }
             >
               In Stock
             </div>
             <div
-              className="product__stock-out"
+              className="product__stock--out"
               style={
                 productQuantity === 0
-                  ? { display: "inline" }
+                  ? { display: "flex" }
                   : { display: "none" }
               }
             >
@@ -89,55 +101,59 @@ export default class ProductSummary extends React.Component {
           </div>
         </div>
         <div className="product__summary">
-          <div className="product__description">
-            <h4 className="product__label">Item Description</h4>
-            <h4 className="product__data">{this.state.product.description}</h4>
+          <div className="product__item-description">
+            <h4 className="product__data-label">Item Description</h4>
+            <p className="product__data">{this.state.product.description}</p>
           </div>
-          <div className="product__container">
-            <div className="product__data-container__dual">
-              <div className="product__data-container">
-                <h4 className="product__label">Ordered By</h4>
-                <h4 className="product__data">
-                  {this.state.warehouse.contact.name}
-                </h4>
+          <div className="product__info-container--with-categories">
+            <div className="product__info-container">
+              <div className="product__info-container--row1">
+                <div className="product__data-container">
+                  <h4 className="product__data-label">Ordered By</h4>
+                  <p className="product__data">
+                    {this.state.warehouse.contact.name}
+                  </p>
+                </div>
+                <div className="product__data-container">
+                  <h4 className="product__data-label">Reference Number</h4>
+                  <p className="product__data">{this.state.product.id}</p>
+                </div>
               </div>
-              <div className="product__data-container">
-                <h4 className="product__label">Reference Number</h4>
-                <h4 className="product__data">{this.state.product.id}</h4>
+              <div className="product__info-container--row2">
+                <div className="product__data-container">
+                  <h4 className="product__data-label">Last Ordered</h4>
+                  <p className="product__data">
+                    {this.state.product.lastOrdered}
+                  </p>
+                </div>
+                <div className="product__data-container">
+                  <h4 className="product__data-label">Location</h4>
+                  <p className="product__data">
+                    {this.state.warehouse.address.location}
+                  </p>
+                </div>
+              </div>
+              <div className="product__info-container--row3">
+                <div className="product__data-container">
+                  <h4 className="product__data-label">Quantity</h4>
+                  <p className="product__data">{productQuantity}</p>
+                </div>
               </div>
             </div>
-            <div className="product__data-container__dual">
-              <div className="product__data-container">
-                <h4 className="product__label">Last Ordered</h4>
-                <h4 className="product__data">
-                  {this.state.product.lastOrdered}
-                </h4>
-              </div>
-              <div className="product__data-container">
-                <h4 className="product__label">Location</h4>
-                <h4 className="product__data">
-                  {this.state.warehouse.address.location}
-                </h4>
-              </div>
-            </div>
-            <div className="product__data-container">
-              <h4 className="product__label">Quantity</h4>
-              <h4 className="product__data">{productQuantity}</h4>
-            </div>
-            <div className="product__data-container">
-              <h4 className="product__label">Category</h4>
-              <h4 className="product__data">
+            <div className="product__categories">
+              <h4 className="product__data-label">Categories</h4>
+              <p className="product__data">
                 {this.state.product.categories}
-              </h4>
+              </p>
             </div>
           </div>
         </div>
         <div className="product__button-container">
-          <button className="product__button-edit">
+          <button className="product__button--edit">
             Edit
           </button>
         </div>
-      </section>
+      </section >
     );
   }
 }
