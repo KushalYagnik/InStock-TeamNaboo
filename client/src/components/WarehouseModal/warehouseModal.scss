@@ -1,0 +1,64 @@
+@import '../reuseable-styling/fonts';
+@import '../reuseable-styling/mixins';
+
+.modalW {
+    font-family: Avenir Next LT Pro;
+
+    &__select{
+
+    }
+    &__title{
+
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        &--label{
+            color: #afafaf;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+
+        }
+        &--input{
+            margin-bottom: 20px;
+            background-color: #fafafa;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            height: 40px;
+            padding: 5px 15px;
+
+        }
+        &--textArea{
+            margin-bottom: 25px;
+            background-color: #fafafa;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            height: 60px;
+            padding: 15px 15px;
+        }
+        &--save{
+            background-color: #004892;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            width: 100%;
+            height: 40px;
+            text-transform: uppercase;
+        }
+        &--cancel{
+        width: 100%;
+        background: none;
+	    color: inherit;
+	    border: none;
+	    padding: 0;
+        outline: inherit;
+        margin-top: 25px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #004892;
+    }
+    }
+}
