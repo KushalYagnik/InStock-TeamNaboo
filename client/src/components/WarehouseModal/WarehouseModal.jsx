@@ -14,8 +14,9 @@ export default function WarehouseModal() {
             </div>
         <div className="modalW">
             <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}> 
+                <form action="">
+                    <div className="modalW__form modalW__form--container1">
                 <h2 className="modalW__title">Add New</h2>
-                <form className="modalW__form" action="">
                 <label className="modalW__form--label" htmlFor="Warehouse">Warehouse</label>
                 <input className="modalW__form--input" name="Warehouse" placeholder="Name & ID"/>
                 <label className="modalW__form--label" htmlFor="Address">Address</label>
@@ -30,13 +31,15 @@ export default function WarehouseModal() {
                 <input className="modalW__form--input" name="Phone" placeholder="(000) 000 0000"/>
                 <label className="modalW__form--label" htmlFor="Email">Email</label>
                 <input className="modalW__form--input" name="Email" placeholder="example@InStock.ca"/>
-                <label className="modalW__form--label" htmlFor="Item">Item Description</label>
+                </div>
+                <div className="modalW__form">
+                <label className="modalW__form--label" htmlFor="Item">Categories</label>
+                </div>
                 <textarea className="modalW__form--textArea" name="Item" placeholder="Use commas to separate each category"></textarea>
-                <div>
+                <div className="modalW__form--containerButtons">
                 <button className="modalW__form--save">save</button>
                 <button className="modalW__form--cancel" onClick={() => setModalIsOpen(false)}>Cancel</button>
                 </div>
-
                 </form>
             </Modal>
         </div>
