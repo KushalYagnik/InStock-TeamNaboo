@@ -30,6 +30,12 @@
 
             @include tabletSize {
                 margin-right: 1.5rem;
+                width: 15rem;
+            }
+
+            @include desktopSize {
+                margin-right: 1.5rem;
+                width: 15rem;
             }
         }
     }
@@ -48,10 +54,14 @@
 
         @include tabletSize {
             margin: 3rem 0 2.5rem 0;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
         }
 
         @include desktopSize {
             margin: 3rem 0 2.5rem 0;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
         }
     }
 
