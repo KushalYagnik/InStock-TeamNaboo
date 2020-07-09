@@ -29,7 +29,7 @@ export default class InventoryKebabMenu extends React.Component {
                 </button>
                 {this.state.isActive &&
                 <div className="kebab-menu__remove-container">
-                        <button className="kebab-menu__remove-button">
+                        <button className="kebab-menu__remove-button" onClick={this.props.removeHandler}>
                             Remove
                         </button>
                     </div>

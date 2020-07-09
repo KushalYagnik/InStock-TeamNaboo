@@ -9,8 +9,8 @@ const warehouseList = require('../data/locations.json');
 
 // get a specific inventory item
 router.get('/locations/:warehouseid', (req, res) => {
-  const targetWarehouse = locationList.find((object) => object.id === req.params.id);
-  const targetInventory = inventoryList.find((object2) => object2.id === req.params.id);
+  const targetWarehouse = locationList.find((object) => object.id === req.params.warehouseid);
+  const targetInventory = inventoryList.find((object2) => object2.id === req.params.warehouseid);
 
     if (targetWarehouse && targetInventory) {
       res.status(200).json({
