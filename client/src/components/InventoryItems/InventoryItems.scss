@@ -19,12 +19,15 @@
     margin: 1em 0;
 }
 .inventory{
+    overflow: none;
     margin: 1em;
     font-size: 15px;
     line-height: 21px;
     border-bottom: 1px solid $colormid;
+    display: flex;
+    justify-content: space-between;
     &__unit{
-        margin: 1em;
+        // margin: 1em;
     }
     &__item{
         &-name{
@@ -44,5 +47,9 @@
     }
     &__status{
         &-status{}
+    }
+    &__kebab{
+        align-self: flex-start;
+        margin-top: 17px;
     }
 }

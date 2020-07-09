@@ -35,7 +35,9 @@ export class InventoryItems extends Component {
                             <div className="inventory__status-status">{item.isInstock ? 'In Stock':'Out of Stock'}</div>
                         </div>
                     </Link>
-                    <Kebab/>
+                    <div className="inventory__kebab">
+                        <Kebab/>
+                    </div>
                 </div>
             )
         })
