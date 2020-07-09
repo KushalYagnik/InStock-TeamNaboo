@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Kebab from '../InventoryKebabMenu/InventoryKebabMenu';
+import axios from 'axios';
 import './InventoryItems.scss'
 
 export class InventoryItems extends Component {
     state = {
-        productList: this.props.products[0]
+        productList: this.props.products[0],
     }
 
+    removeHandler = (e) => {
+        e.preventDefault();
+
+        axios.delete('/inventory.json')
+        .then(res =>{
+            console.log(res);
+        })
+    }
+
+    
     render() {
         const inventoryList = this.props.products[0].map(item => {
             return (
@@ -36,7 +47,7 @@ export class InventoryItems extends Component {
                         </div>
                     </Link>
                     <div className="inventory__kebab">
-                        <Kebab/>
+                        <Kebab removeHandler={this.removeHandler}/>
                     </div>
                 </div>
             )
