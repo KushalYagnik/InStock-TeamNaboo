@@ -7,13 +7,19 @@ import './Header.scss';
 export default function Header() {
 
   function checkActive() {
-    if (window.location.pathname === "/inventory") {return ("header__inventory--active")} 
+    if (window.location.pathname.includes("/inventory")) {return ("header__inventory--active")} 
     else {return ("header__inventory")}
   }
 
   function checkActive2() {
-    if (window.location.pathname === "/locations" || window.location.pathname === "/") {return ("header__locations--active")}
-    else {return ("header__locations")}
+    if (
+      window.location.pathname.includes("/locations") ||
+      window.location.pathname === "/"
+    ) {
+      return "header__locations--active";
+    } else {
+      return "header__locations";
+    }
   }
 
   return (

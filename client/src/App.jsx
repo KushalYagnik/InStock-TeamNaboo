@@ -9,11 +9,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact render={props => {return <Home props={props}/>}}/>
-        <Route path="/locations" render={props => {return <Home props={props}/>}}/>
-        <Route path="/locations/:id" render={props => {return <Home props={props}/>}}/>
-        <Route path="/inventory" render={props => {return <Inventory props={props}/>}}/>
-        <Route path="/inventory/:id" render={props => {return <Inventory props={props}/>}}/>
+        <Route path="/" exact render={routeProps => <Home id={routeProps.match.params.id} />} />
+        <Route exact path="/inventory"><Inventory /></Route>
+        <Route path="/inventory/:id" render={props => <Inventory props={props}/>}/>
+        <Route path="/locations/:id" render={routeProps => {
+          return <Home id={routeProps.match.params.id} />
+        }} />
+        <Route exact path="/locations" render={routeProps => {
+          return <Home id={routeProps.match.params.id} />
+        }} />
       </Switch>
   </BrowserRouter>
   );

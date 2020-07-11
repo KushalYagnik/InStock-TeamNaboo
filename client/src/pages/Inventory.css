@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Thin.otf");
+  font-weight: 100;
+}
+
+* {
+  font-family: 'Avenir Next LT Pro', 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.inventory__header {
+  margin: 1em;
+  width: 100%;
+}
+
+.inventory__header-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: #323232;
+}
+
+.inventory__header-searchbox {
+  width: 90%;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-left: 35px;
+  border: 2px solid #E1E1E1;
+  background-color: #f9f9f9;
+  background-image: url("../assets/Icons/SVG/Icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=Inventory.css.map */

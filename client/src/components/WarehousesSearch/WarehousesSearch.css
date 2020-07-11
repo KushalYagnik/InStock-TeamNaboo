@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Demi.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Avenir Next LT Pro';
+  src: url("../../assets/_Global Font/AvenirNextProLT/Linotype-AvenirNextLTPro-Thin.otf");
+  font-weight: 100;
+}
+
+* {
+  font-family: 'Avenir Next LT Pro', 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.locations-container {
+  padding: 16px;
+}
+
+.locations-search {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.locations-search__title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #323232;
+}
+
+.locations-search__search {
+  width: 90%;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-left: 35px;
+  border: 2px solid #E1E1E1;
+  background-color: #f9f9f9;
+  background-image: url("../../assets/Icons/SVG/Icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+  font-size: 14px;
+}
+
+.warehouse-list {
+  padding-top: 35px;
+  font-size: 15px;
+  line-height: 21px;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.warehouse-list__warehouse {
+  font-weight: 500;
+  padding-bottom: 0;
+}
+
+.warehouse-list__right-arrow {
+  position: absolute;
+  right: 20px;
+  height: 25px;
+}
+
+.warehouse-list__address {
+  padding-top: 12px;
+}
+
+.warehouse-list__contact {
+  padding-top: 20px;
+}
+
+.warehouse-list__position {
+  font-style: italic;
+}
+
+.warehouse-list__phone {
+  padding-top: 25px;
+}
+
+.warehouse-list__desc {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+/*# sourceMappingURL=WarehousesSearch.css.map */
