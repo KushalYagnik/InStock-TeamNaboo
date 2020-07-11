@@ -31,7 +31,7 @@ export default function WarehouseModal() {
       "email": email,
       "itemDesc": itemDesc,
     }, {headers: {'Content-Type': 'application/json'}})
-    .then(res => {res.data})
+    .then(res => res.data)
     .catch(err => console.error(err))
   }
 
