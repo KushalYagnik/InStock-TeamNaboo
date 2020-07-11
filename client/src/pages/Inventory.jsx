@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header'
-import Products from '../components/InventoryItems/InventoryItems'
-import './Inventory.scss'
+import Header from '../components/Header/Header';
+import Products from '../components/InventoryItems/InventoryItems';
+import './Inventory.scss';
+import InventoryModal from '../components/AddInventory/AddInventory';
 
 export class Inventory extends Component {
     state = {
@@ -23,11 +24,13 @@ export class Inventory extends Component {
                 return (
                     <>
                         <Header />
+                        <InventoryModal/>
                         <div className="inventory__header">
                             <h1 className="inventory__header-title">Inventory</h1>
                             <input className="inventory__header-searchbox" type="text" placeholder="Search"/>
                         </div>
                         <Products products={this.state.products}/>
+                       
                     </>
                 )
         }
