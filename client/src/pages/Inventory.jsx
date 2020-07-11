@@ -24,7 +24,7 @@ export class Inventory extends Component {
                 return (
                     <>
                         <Header />
-                        <InventoryModal/>
+                        <InventoryModal table={this.refreshTable} locations={this.state.locations}/>
                         <div className="inventory__header">
                             <h1 className="inventory__header-title">Inventory</h1>
                             <input className="inventory__header-searchbox" type="text" placeholder="Search"/>
