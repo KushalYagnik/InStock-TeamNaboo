@@ -5,7 +5,9 @@ const warehouseList = require('../data/locations.json');
 
 // get all warehouse
 // route goes here
-
+router.get('/', (req,res) => {
+  res.status(200).json(warehouseList);
+})
 
 // get a specific inventory item
 router.get('/locations/:warehouseid', (req, res) => {
