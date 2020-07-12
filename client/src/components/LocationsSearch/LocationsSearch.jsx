@@ -26,19 +26,29 @@ class LocationsSearch extends React.Component {
           </header>
           {this.state.warehouses.map((theWarehouse) => 
             <header className="warehouse-list" key={theWarehouse.id}>
-              <img src={RightArrow} className="warehouse-list__right-arrow" alt="right arrow"/>
-                <div className="warehouse-list__warehouse">{theWarehouse.name}</div>
-                <div className="warehouse-list__address">{theWarehouse.address.street}, {theWarehouse.address.location}</div>
-              <div className="warehouse-list__contact">{theWarehouse.contact.name}</div>
+              <Link className="warehouse-link" to={`/locations/${theWarehouse.id}`}>
+                <img src={RightArrow} className="warehouse-list__right-arrow" alt="right arrow"/>
+              </Link>   
+              <div className="warehouse-list__warehouse">{theWarehouse.name}</div>
+              <div className="warehouse-list__address">{theWarehouse.address.street}, {theWarehouse.address.location}</div>
+              <div className="warehouse-list__wrapper">
+                <div className="warehouse-list__contact">{theWarehouse.contact.name}</div>
                 <div className="warehouse-list__position">{theWarehouse.contact.position}</div>
+              
                 <div className="warehouse-list__phone">{theWarehouse.contact.phone}</div>
                 <div className="warehouse-list__email">{theWarehouse.contact.email}</div>
+
                 <div className="warehouse-list__desc">{theWarehouse.inventoryCategories}</div>
-            </header>  
-          )}
+              </div>
+              
+            </header>     
+            )}            
         </section>
-    )}
+  )
+  }
 }
+
+          
             
 
 
