@@ -7,16 +7,21 @@ const uuid = require('uuid');
 // get all warehouse
 // route goes here
 
+router.get('/warehouses', (req,res) => {
+  res.status(200).json(warehouseList);
+})
+
 
 // get a specific inventory item
-router.get('/locations/:warehouseid', (req, res) => {
-  const targetWarehouse = locationList.find((object) => object.id === req.params.warehouseid);
+router.get('/warehouses/:warehouseid', (req, res) => {
+  console.log(req.params)
+  const targetWarehouse = warehouseList.find((object) => object.id === req.params.warehouseid);
   const targetInventory = inventoryList.find((object2) => object2.id === req.params.warehouseid);
 
-    if (targetWarehouse && targetInventory) {
+    if (targetWarehouse || targetInventory) {
       res.status(200).json({
-        "Warehouse located": targetWarehouse,
-        "Warehouse inventory": targetInventory
+        WarehouseLocated: targetWarehouse,
+        WarehouseInventory: targetInventory
       });
     } else {
       res.status(404).json({
@@ -42,7 +47,7 @@ router.get('/locations/:warehouseid', (req, res) => {
 
 //POST a warehouse item
 
-router.post('/:warehouseid', (req,res) => {
+router.post('/warehouses', (req,res) => {
 console.log(req);
 
 //insert if/else statement with error messages
@@ -50,7 +55,7 @@ console.log(req);
 
 const newWarehouse = {
       id: uuid.v4(),
-      nameId: req.body.nameId,
+      name: req.body.name,
       address: req.body.address,
       location: req.body.location,
       contact: req.body.contact,
@@ -59,6 +64,22 @@ const newWarehouse = {
       email: req.body.email,
       itemDesc: req.body.itemDesc,
 }
+
+// {
+//   id: uuid.v4(),
+//   name: req.body.nameId,
+//   address: {
+//       street: req.body.address,
+//       location: req.body.location
+//   },
+//   contact: {
+//       name: req.body.contact,
+//       position: req.body.position,
+//       phone: req.body.phone,
+//       email: req.body.email
+//   },
+//   inventoryCategories: req.body.itemDesc
+// }
 
   warehouseList.push(newWarehouse);
   res.json(warehouseList);

@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Kebab from '../InventoryKebabMenu/InventoryKebabMenu';
-import axios from 'axios';
 import './InventoryItems.scss'
-
 export class InventoryItems extends Component {
     state = {
-        productList: this.props.products[0],
+        productList: this.props.products[0]
     }
-
-    removeHandler = (e) => {
-        e.preventDefault();
-        
-        axios.delete('http://localhost:8080/inventory/:inventoryid')
-        .then(res =>{
-            console.log(res)
-        }).catch(error => console.log(error));
-    }
-
-    
     render() {
-        const inventoryList = this.props.products[0].map(item => {
+        const inventoryList = this.props.products.map(item => {
             return (
                 <div key={item.id} className='inventory'>
                     <Link to={`/inventory/${item.id}`} className='inventory__unit'>
@@ -46,13 +33,12 @@ export class InventoryItems extends Component {
                             <div className="inventory__status-status">{item.isInstock ? 'In Stock':'Out of Stock'}</div>
                         </div>
                     </Link>
-                    <div className="inventory__kebab">
-                        <Kebab removeHandler={this.removeHandler}/>
+                        <div className="inventory__kebab">
+                        <Kebab/>
                     </div>
                 </div>
             )
         })
-        
         return (
             <>
                 {inventoryList}
@@ -60,5 +46,4 @@ export class InventoryItems extends Component {
         )
     }
 }
-
 export default InventoryItems

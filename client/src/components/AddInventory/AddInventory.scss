@@ -1,9 +1,7 @@
 @import '../reuseable-styling/fonts';
 @import '../reuseable-styling/mixins';
-
-.modalW {
+.modalI {
     font-family: Avenir Next LT Pro;
-
     &__select{
         background-color: #004892;
         padding: 5px;
@@ -19,12 +17,6 @@
             margin-top: 500px;
             margin-left: 650px;
         }
-
-        @include desktopSize{
-            // margin-top: 850px;
-            // margin-left: 1050px;
-        }
-
         &--img{
             width: 25px;
             height: auto;
@@ -32,9 +24,9 @@
                 width: 50px;
             }
         }
-
     }
     &__title{
+        margin-bottom: 1.2em;
         @include tabletSize{
             margin-right: auto 26px;
         }
@@ -52,7 +44,6 @@
             font-weight: 500;
             text-transform: uppercase;
             margin-bottom: 5px;
-
         }
         &--input{
             margin-bottom: 20px;
@@ -61,16 +52,26 @@
             border-radius: 5px;
             height: 40px;
             padding: 5px 15px;
-
+        }
+        &--toggle-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5em 0;
         }
         &--textArea{
             margin-bottom: 25px;
             background-color: #fafafa;
             border: 1px solid #e1e1e1;
             border-radius: 5px;
-            height: 60px;
+            height: 70px;
             padding: 15px 15px;
             width: 100%;
+            resize: none;
+        }
+        &--status{
+            font-weight: 400;
+            font-size: 1.2em;
         }
         &--save{
             background-color: #004892;
@@ -114,14 +115,12 @@
         @include tabletSize{
         display: flex;
         flex-direction: row-reverse;
-        justify-content: flex-end;
+        justify-content: end;
         align-items: center;
-        
         }
     }
     }
 }
-
 textarea {
     @include tabletSize{
         margin: auto 26px;
