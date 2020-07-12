@@ -29,7 +29,7 @@ export default class LocationsSearch extends React.Component {
           {this.state.warehouses.map((theWarehouse) =>  {
             return (                           
             <header className="warehouse-list" key={theWarehouse.id}>
-              <Link className="warehouse-link" to={`/locations/${theWarehouse.id}`}>
+              <Link className="warehouse-link" to={`/warehouses/${theWarehouse.id}`}>
                 <img src={RightArrow} className="warehouse-list__right-arrow" alt="right arrow"/>
               </Link>   
               <div className="warehouse-list__warehouse">{theWarehouse.name}</div>

@@ -2,6 +2,55 @@ const express = require('express');
 const router = express.Router();
 const inventoryList = require('../data/inventory.json');
 const warehouseList = require('../data/locations.json');
+let newPost = [];
+
+// == Post /videos ==
+router.post('/', (req, res) => {
+  warehouseList.push({    
+    "description": description,
+    "ordered_by": warehouse[0].contact,
+    "last_ordered": date,
+    "quantity": quantity,
+    "location": `${warehouse[0].city}, ${warehouse[0].country}`,
+    "status": stock,
+    "key": createID(),
+    "warehouseID": warehouseId,
+    "categories": warehouse[0].inventoryCategories
+})
+newPost = warehouseList[warehouseList.length-1];
+res.json(newPost)
+})
+
+// post test route
+// console.log("before the post")
+// router.post("/", (req, res) => {
+//   console.log("in the post")
+//   // const {item,date,description,stock,quantity, warehouseId} = req.body
+//   const {item} = req.body
+//   const warehouse = warehouseData.filter(warehouse => {
+//     if(warehouse.id === warehouseId) {
+//       return true
+//     } else {
+//       return false
+//     }
+//   })
+//   const newinventory = {
+//     "item": item,
+//     // "description": description,
+//     // "ordered_by": warehouse[0].contact,
+//     // "last_ordered": date,
+//     // "quantity": quantity,
+//     // "location": `${warehouse[0].city}, ${warehouse[0].country}`,
+//     // "status": stock,
+//     // "key": createID(),
+//     // "warehouseID": warehouseId,
+//     // "categories": warehouse[0].inventoryCategories
+//   }
+//   inventoryData.push(newinventory);
+//   // writeJSONFile(inventoryItem,inventoryData);
+//   return res.status(200).json(inventoryData);
+// });
+
 
 // get all warehouse
 // route goes here
@@ -10,7 +59,7 @@ router.get('/', (req,res) => {
 })
 
 // get a specific inventory item
-router.get('/locations/:warehouseid', (req, res) => {
+router.get('/warehouses/:warehouseid', (req, res) => {
   const targetWarehouse = locationList.find((object) => object.id === req.params.warehouseid);
   const targetInventory = inventoryList.find((object2) => object2.id === req.params.warehouseid);
 

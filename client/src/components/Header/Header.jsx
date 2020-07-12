@@ -13,7 +13,7 @@ export default function Header() {
 
   function checkActive2() {
     if (
-      window.location.pathname.includes("/locations") ||
+      window.location.pathname.includes("/warehouses") ||
       window.location.pathname === "/"
     ) {
       return "header__locations--active";
@@ -26,7 +26,7 @@ export default function Header() {
       <header className="header">
         <Link className="header__logo" to="/"><img src={logo} alt="logo" className="header__logo-image"/></Link>
         <Link className={checkActive()} to="/inventory"><div className="header__inventory-link">Inventory</div></Link> 
-        <Link className={checkActive2()} to="/locations"><div className="header__locations-link">Locations</div></Link>
+        <Link className={checkActive2()} to="/warehouses"><div className="header__locations-link">Locations</div></Link>
       </header>
   );
 }
