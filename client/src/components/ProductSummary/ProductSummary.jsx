@@ -49,7 +49,7 @@ export default class ProductSummary extends React.Component {
       });
 
     axios
-      .get(`http://localhost:8080/locations/${warehouseId}`)
+      .get(`http://localhost:8080/warehouses/${warehouseId}`)
       .then(res => {
         this.setState({
           warehouse: res.data

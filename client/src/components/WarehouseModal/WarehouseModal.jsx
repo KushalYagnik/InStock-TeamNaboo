@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './WarehouseModal.scss';
 import Modal from 'react-modal';
-import axios from 'axios';
+// import axios from 'axios';
 import add from '../../assets/Icons/SVG/Icon-add.svg';
 
 Modal.setAppElement('#root')
@@ -10,14 +10,14 @@ export default function WarehouseModal() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   
   // Post added here so each separate piece can work individually
-  const [nameId, setnameId] = useState("")
-  const [address, setAddy] = useState("")
-  const [location, setLocation] = useState("")
-  const [contact, setContact] = useState("")
-  const [position, setPosition] = useState("")
-  const [phone, setPhone] = useState("")
-  const [email, setEmail] = useState("")
-  const [itemDesc, setDesc] = useState("")
+//   const [nameId, setnameId] = useState("")
+//   const [address, setAddy] = useState("")
+//   const [location, setLocation] = useState("")
+//   const [contact, setContact] = useState("")
+//   const [position, setPosition] = useState("")
+//   const [phone, setPhone] = useState("")
+//   const [email, setEmail] = useState("")
+//   const [itemDesc, setDesc] = useState("")
   
 //   const sendUpload = () => {
 //   axios

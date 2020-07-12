@@ -9,11 +9,14 @@ app.use(bodyParser.json());
 
 const PORT = 8080;
 
-// routes
+// inventory routes
 app.use('/', require('../server/src/routes/inventoryRoutes'));
-// warehouse routes can go here
+app.use('/inventory',require('./src/routes/inventoryRoutes'));
+app.use('/inventory/:inventoryId',require('./src/routes/inventoryRoutes'));
 
-
+// warehouse routes
+app.use('/warehouses', require('./src/routes/locationRoutes'));
+app.use('/warehouses/:warehouseId', require('./src/routes/locationRoutes'));
 
 
 app.listen(8080, (error) => {
