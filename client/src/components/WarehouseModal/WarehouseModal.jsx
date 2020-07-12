@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './WarehouseModal.scss';
 import Modal from 'react-modal';
-// import axios from 'axios';
+import axios from 'axios';
 import add from '../../assets/Icons/SVG/Icon-add.svg';
 
 Modal.setAppElement('#root')
@@ -9,31 +9,31 @@ Modal.setAppElement('#root')
 export default function WarehouseModal() {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   
-  // Post added here so each separate piece can work individually
-//   const [nameId, setnameId] = useState("")
-//   const [address, setAddy] = useState("")
-//   const [location, setLocation] = useState("")
-//   const [contact, setContact] = useState("")
-//   const [position, setPosition] = useState("")
-//   const [phone, setPhone] = useState("")
-//   const [email, setEmail] = useState("")
-//   const [itemDesc, setDesc] = useState("")
+//   Post added here so each separate piece can work individually
+  const [nameId, setnameId] = useState("")
+  const [address, setAddy] = useState("")
+  const [location, setLocation] = useState("")
+  const [contact, setContact] = useState("")
+  const [position, setPosition] = useState("")
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
+  const [itemDesc, setDesc] = useState("")
   
-//   const sendUpload = () => {
-//   axios
-//     .post('/locations.json', {
-//       "nameId": nameId,
-//       "address": address,
-//       "location": location,
-//       "contact": contact,
-//       "position": position,
-//       "phone": phone,
-//       "email": email,
-//       "itemDesc": itemDesc,
-//     }, {headers: {'Content-Type': 'application/json'}})
-//     .then(res => {res.data})
-//     .catch(err => console.error(err))
-//   }
+  const sendUpload = () => {
+  axios
+    .post('http://localhost:8080/warehouses', {
+      nameId: nameId,
+      address: address,
+      location: location,
+      contact: contact,
+      position: position,
+      phone: phone,
+      email: email,
+      itemDesc: itemDesc,
+    }, {headers: {'Content-Type': 'application/json'}})
+    .then(res => res.data)
+    .catch(err => console.error(err))
+  }
 
   return (
       <div>
@@ -65,8 +65,8 @@ export default function WarehouseModal() {
               </div>
               <textarea className="modalW__form--textArea" name="Item" placeholder="Use commas to separate each category"></textarea>
               <div className="modalW__form--containerButtons">
-              {/* <button className="modalW__form--save" onClick={sendUpload}>Save</button> */}
-              <button className="modalW__form--save">Save</button>
+              <button className="modalW__form--save" onClick={sendUpload}>Save</button>
+              {/* <button className="modalW__form--save">Save</button> */}
               <button className="modalW__form--cancel" onClick={() => setModalIsOpen(false)}>Cancel</button>
               </div>
               </form>

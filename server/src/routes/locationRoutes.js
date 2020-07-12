@@ -7,6 +7,12 @@ const uuid = require('uuid');
 // get all warehouse
 // route goes here
 
+router.get('/warehouses', (req,res) => {
+  res.status(200).json(warehouseList);
+})
+
+
+
 
 // get a specific inventory item
 router.get('/warehouses/:warehouseid', (req, res) => {
@@ -42,7 +48,7 @@ router.get('/warehouses/:warehouseid', (req, res) => {
 
 //POST a warehouse item
 
-router.post('/:warehouseid', (req,res) => {
+router.post('/warehouses', (req,res) => {
 console.log(req);
 
 //insert if/else statement with error messages
