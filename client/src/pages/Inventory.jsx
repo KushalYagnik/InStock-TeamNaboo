@@ -9,10 +9,10 @@ export class Inventory extends Component {
         products: [],
     }
     componentDidMount() {
-        axios.get('/inventory.json')
+        axios.get('http://localhost:8080/inventory')
             .then(res => {
                 this.setState(
-                    { products: [res.data] }
+                    { products: res.data }
                 )
             });
     }

@@ -7,7 +7,7 @@ export class InventoryItems extends Component {
         productList: this.props.products[0]
     }
     render() {
-        const inventoryList = this.props.products[0].map(item => {
+        const inventoryList = this.props.products.map(item => {
             return (
                 <div key={item.id} className='inventory'>
                     <Link to={`/${item.id}`} className='inventory__unit'>

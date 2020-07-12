@@ -15,7 +15,6 @@ class WarehousesSearch extends React.Component {
     .then(res => {
       const warehouses = res.data;
       this.setState({ warehouses })
-      console.log(res.data)
     })
     .catch(err => console.log("Errors: ", err))
   }
