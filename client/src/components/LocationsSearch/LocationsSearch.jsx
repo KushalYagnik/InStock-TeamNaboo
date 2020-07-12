@@ -34,11 +34,16 @@ export default class LocationsSearch extends React.Component {
               </Link>   
               <div className="warehouse-list__warehouse">{theWarehouse.name}</div>
               <div className="warehouse-list__address">{theWarehouse.address.street}, {theWarehouse.address.location}</div>
-              <div className="warehouse-list__contact">{theWarehouse.contact.name}</div>
-              <div className="warehouse-list__position">{theWarehouse.contact.position}</div>
-              <div className="warehouse-list__phone">{theWarehouse.contact.phone}</div>
-              <div className="warehouse-list__email">{theWarehouse.contact.email}</div>
-              <div className="warehouse-list__desc">{theWarehouse.inventoryCategories}</div>
+              <div className="warehouse-list__wrapper">
+                <div className="warehouse-list__contact">{theWarehouse.contact.name}</div>
+                <div className="warehouse-list__position">{theWarehouse.contact.position}</div>
+              
+                <div className="warehouse-list__phone">{theWarehouse.contact.phone}</div>
+                <div className="warehouse-list__email">{theWarehouse.contact.email}</div>
+
+                <div className="warehouse-list__desc">{theWarehouse.inventoryCategories}</div>
+              </div>
+              
             </header>     
             )}  
           )}
