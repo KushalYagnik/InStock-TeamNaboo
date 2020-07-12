@@ -12,7 +12,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact render={routeProps => <Home id={routeProps.match.params.id} />} />
         <Route exact path="/inventory"><Inventory /></Route>
-        <Route path="/inventory/:inventoryid" render={props => <ProductSummary props={props}/>}/>
+        <Route path="/inventory/:inventoryid" render={props => <ProductSummary {... props}/>}/>
         <Route path="/warehouses/:id" render={routeProps => {
           return <Home id={routeProps.match.params.id} />
         }} />
@@ -23,3 +23,4 @@ export default function App() {
   </BrowserRouter>
   );
 }
+
