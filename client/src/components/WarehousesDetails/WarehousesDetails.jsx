@@ -20,7 +20,6 @@ export default class WarehousesDetails extends React.Component {
     axios
     .get('/locations.json')
     .then(res => {
-      console.log(res.data)
       const filteredWarehouse = res.data.find((item, i) => {
         return this.props.id === res.data[i].id
       })

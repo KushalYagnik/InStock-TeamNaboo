@@ -10,7 +10,6 @@ import WarehouseModal from '../components/WarehouseModal/WarehouseModal';
 // let pulledWarehouse, pulledWidget = {};
 
 export default function Home(routeProps) {
-  console.log('routeProps.id', routeProps.id)
 
   return (
     <div className="home-container">

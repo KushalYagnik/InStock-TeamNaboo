@@ -2,9 +2,14 @@ const express = require('express');
 const router = express.Router();
 const inventoryList = require('../data/inventory.json');
 const warehouseList = require('../data/locations.json');
+const uuid = require('uuid');
 
 // get all inventory
 // route goes here
+
+router.get('/inventory', (req,res) => {
+  res.status(200).json(inventoryList);
+})
 
 // get a specific inventory item
 router.get('/inventory/:inventoryid', (req, res) => {
@@ -33,5 +38,32 @@ router.delete('/inventory/:inventoryid', (req, res) => {
       });
   }
 })
+
+//POST inventory item
+
+router.post('/inventory', (req,res) => {
+  console.log(req);
+  
+  //insert if/else statement with error messages
+  
+  
+  const newInventory = {
+      id: uuid.v4(),
+      name: req.body.name,
+      description: req.body.description,
+      quantity: req.body.quantity,
+      lastOrdered: req.body.lastOrdered,
+      city: req.body.city,
+      country: req.body.country,
+      isInstock: req.body.isInstock,
+      categories: req.body.categories,
+      warehouseId: req.body.warehouseId
+    }
+  
+    inventoryList.push(newInventory);
+    res.json(inventoryList);
+  
+  })
+
 
 module.exports = router;

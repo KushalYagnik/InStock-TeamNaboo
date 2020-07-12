@@ -11,13 +11,25 @@ class WarehousesSearch extends React.Component {
 
   componentDidMount() {
     axios
-    .get('/locations.json')
+    .get('http://localhost:8080/warehouses')
     .then(res => {
       const warehouses = res.data;
       this.setState({ warehouses })
+      console.log(res.data)
     })
     .catch(err => console.log("Errors: ", err))
   }
+
+  // componentDidUpdate() {
+  //   axios
+  //   .get('http://localhost:8080/warehouses')
+  //   .then(res => {
+  //     const warehouses = res.data;
+  //     this.setState({ warehouses })
+
+  //   })
+  //   .catch(err => console.log("Errors: ", err))
+  // }
 
 render () {
     return (
@@ -29,7 +41,6 @@ render () {
           {this.state.warehouses.map((theWarehouse) =>  {
             return (                           
             <header className="warehouse-list" key={theWarehouse.id}>
-              {console.log("theWarehouse.id: ", theWarehouse.id)}
               <Link className="warehouse-link" to={`/warehouses/${theWarehouse.id}`}>
                 <img src={RightArrow} className="warehouse-list__right-arrow" alt="right arrow"/>
               </Link>   
