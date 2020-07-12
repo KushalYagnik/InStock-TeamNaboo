@@ -13,7 +13,7 @@
 
   @include tabletSize {
     justify-content: flex-start;
-    height: 68px;
+    height: 80px;
   }
 
   @include desktopSize {
@@ -29,7 +29,7 @@
 
     @include tabletSize {
       width: auto;
-      margin: 0 65px 8px 0;
+      margin: 0 45px 8px 0;
     }
 
     @include desktopSize {
@@ -44,7 +44,7 @@
 
       @include tabletSize {
         width: auto;
-        height: 22px;
+        height: 19px;
         margin-top: 3px;
         margin-left: 20px;
       }
@@ -70,17 +70,21 @@
       align-self: flex-start;
       width: 12%;
       height: auto;
-      margin: 0 35px 0 0px;
-      padding: 23px 0;
+      margin: 0 50px 0 0px;
+      padding: 28px 0;
       font-size: 15px;
     }
 
     @include desktopSize {
       width: 7%;
-      margin-left: 0px;
       margin-right: 45px;
       padding: 18px 0;
       font-size: 12px;
+    }
+
+    &-link {
+      padding-top: 3px;
+      font-size: 13px;
     }
 
     &--active {
@@ -97,7 +101,7 @@
         width: 12%;
         height: auto;
         margin: 0 35px 0 0px;
-        padding: 23px 0;
+        padding: 29px 0;
         font-size: 15px;
       }
   
@@ -125,7 +129,7 @@
       width: 12%;
       height: auto;
       margin: 0 8px 0 0px;
-      padding: 23px 0;
+      padding: 28px 0;
       font-size: 15px;
     }
 
@@ -135,6 +139,11 @@
       margin-right: 25px;
       padding: 18px 0;
       font-size: 12px;
+    }
+
+    &-link {
+      padding-top: 3px;
+      font-size: 13px;
     }
 
     &--active {
@@ -148,10 +157,10 @@
 
       @include tabletSize {
         align-self: flex-start;
-        width: 12%;
+        width: 10%;
         height: auto;
         margin: 0 35px 0 0px;
-        padding: 23px 0;
+        padding: 29px 0;
         font-size: 15px;
       }
   

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './warehouseModal.scss';
+import './/WarehouseModal.scss';
 import Modal from 'react-modal';
 import add from '../../assets/Icons/SVG/Icon-add.svg';
 
