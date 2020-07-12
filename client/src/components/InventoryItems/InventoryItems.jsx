@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Kebab from '../InventoryKebabMenu/InventoryKebabMenu';
 import './InventoryItems.scss'
+
 export class InventoryItems extends Component {
     state = {
         productList: this.props.products[0]
@@ -10,7 +11,7 @@ export class InventoryItems extends Component {
         const inventoryList = this.props.products.map(item => {
             return (
                 <div key={item.id} className='inventory'>
-                    <Link to={`inventory/${item.id}`} className='inventory__unit'>
+                    <Link to={`/inventory/${item.id}`} className='inventory__unit'>
                         <div className='inventory__item'>
                             <div className='inventory__item-label lbl'>Item</div>
                             <div className="inventory__item-name">{item.name}</div>
@@ -33,7 +34,7 @@ export class InventoryItems extends Component {
                             <div className="inventory__status-status">{item.isInstock ? 'In Stock':'Out of Stock'}</div>
                         </div>
                     </Link>
-                    <div className="inventory__kebab">
+                        <div className="inventory__kebab">
                         <Kebab/>
                     </div>
                 </div>
