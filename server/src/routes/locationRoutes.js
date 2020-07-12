@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const inventoryList = require('../data/inventory.json');
 const warehouseList = require('../data/locations.json');
+const uuid = require('uuid');
 
 // get all warehouse
 // route goes here
@@ -38,5 +39,31 @@ router.get('/locations/:warehouseid', (req, res) => {
 //       });
 //   }
 // })
+
+//POST a warehouse item
+
+router.post('/:warehouseid', (req,res) => {
+console.log(req);
+
+//insert if/else statement with error messages
+
+
+const newWarehouse = {
+      id: uuid.v4(),
+      nameId: req.body.nameId,
+      address: req.body.address,
+      location: req.body.location,
+      contact: req.body.contact,
+      position: req.body.position,
+      phone: req.body.phone,
+      email: req.body.email,
+      itemDesc: req.body.itemDesc,
+}
+
+  warehouseList.push(newWarehouse);
+  res.json(warehouseList);
+
+})
+
 
 module.exports = router;
