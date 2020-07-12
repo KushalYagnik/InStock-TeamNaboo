@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './/WarehouseModal.scss';
+import './WarehouseModal.scss';
 import Modal from 'react-modal';
 import axios from 'axios';
 import add from '../../assets/Icons/SVG/Icon-add.svg';
