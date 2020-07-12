@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './WarehouseModal.scss';
+import './warehouseModal.scss';
 import Modal from 'react-modal';
 import axios from 'axios';
 import add from '../../assets/Icons/SVG/Icon-add.svg';
@@ -19,21 +19,22 @@ export default function WarehouseModal() {
   const [email, setEmail] = useState("")
   const [itemDesc, setDesc] = useState("")
   
-//   const sendUpload = () => {
-//   axios
-//     .post('/locations.json', {
-//       "nameId": nameId,
-//       "address": address,
-//       "location": location,
-//       "contact": contact,
-//       "position": position,
-//       "phone": phone,
-//       "email": email,
-//       "itemDesc": itemDesc,
-//     }, {headers: {'Content-Type': 'application/json'}})
-//     .then(res => {res.data})
-//     .catch(err => console.error(err))
-//   }
+  const sendUpload = () => {
+  axios
+    // .post('/locations.json', {
+    .post('http://localhost:8080/locations', {
+      "nameId": nameId,
+      "address": address,
+      "location": location,
+      "contact": contact,
+      "position": position,
+      "phone": phone,
+      "email": email,
+      "itemDesc": itemDesc,
+    }, {headers: {'Content-Type': 'application/json'}})
+    .then(res => {console.log(res.data)})
+    .catch(err => console.error(err))
+  }
 
   return (
       <div>
@@ -65,8 +66,8 @@ export default function WarehouseModal() {
               </div>
               <textarea className="modalW__form--textArea" name="Item" placeholder="Use commas to separate each category"></textarea>
               <div className="modalW__form--containerButtons">
-              {/* <button className="modalW__form--save" onClick={sendUpload}>Save</button> */}
-              <button className="modalW__form--save">Save</button>
+              <button className="modalW__form--save" onClick={sendUpload}>Save</button>
+              {/* <button className="modalW__form--save">Save</button> */}
               <button className="modalW__form--cancel" onClick={() => setModalIsOpen(false)}>Cancel</button>
               </div>
               </form>

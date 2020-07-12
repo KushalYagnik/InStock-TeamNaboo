@@ -1,0 +1,75 @@
+@mixin box-shadow($prop) {
+    -moz-box-shadow: $prop;
+    -webkit-box-shadow: $prop;
+    box-shadow: $prop;
+}
+
+@mixin transform($prop) {
+    -webkit-transform: $prop;
+    -ms-transform: $prop;
+    transform: $prop;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #E1E1E1;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+}
+
+.switch.off,
+.switch.on {
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.switch.on {
+    background-color: rgb(105, 176, 27);
+}
+
+.switch.off:before,
+.switch.off:after {
+    -webkit-transition: 0.6s;
+    transition: all 0.6s;
+}
+
+.switch.on:before,
+.switch.on:after {
+    -webkit-transition: 0.6s;
+    transition: all 0.6s;
+}
+
+.switch.off:before,
+.switch.on:before {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: -2px;
+    top: -2px;
+    background-color: #ffffff;
+    border: 1px solid #afafaf;
+    transition: all 0.6s;
+    -webkit-transition: 0.6s;
+    -webkit-transition-delay: 0.01s;
+    transition-delay: 0.01s;
+    border-radius: 50%;
+    // @include box-shadow(inset -8px -8px 6px -6px #AFAFAF);
+}
+
+.switch.off:after {
+    display: block;
+    position: absolute;
+}
+
+.switch.on:before {
+    @include transform(translateX(18px));
+}
+
+.switch.on:after {
+    position: absolute;
+}
