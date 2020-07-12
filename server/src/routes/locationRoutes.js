@@ -9,7 +9,7 @@ const uuid = require('uuid');
 
 
 // get a specific inventory item
-router.get('/locations/:warehouseid', (req, res) => {
+router.get('/warehouses/:warehouseid', (req, res) => {
   const targetWarehouse = locationList.find((object) => object.id === req.params.warehouseid);
   const targetInventory = inventoryList.find((object2) => object2.id === req.params.warehouseid);
 
