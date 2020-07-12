@@ -18,8 +18,10 @@ export default class ProductSummary extends React.Component {
     axios
       .get(`/inventory.json`)
       .then(res => {
-        const widgets = res.data;
-        this.setState({ widgets })
+        const filteredWidget = res.data.find((item, i) => {
+          return this.props.id === res.data[i].id
+        })
+        this.setState({ product: filteredWidget })
       })
       .catch(err => console.log("Errors: ", err))
   }
@@ -45,14 +47,14 @@ export default class ProductSummary extends React.Component {
               </div>
               <div
                 className="product__stock--in"
-                style={productQuantity > 0 ? { display: "flex" } : { display: "none" }}
+                style={this.state.product.quantity > 0 ? { display: "flex" } : { display: "none" }}
               >
                 In Stock
             </div>
               <div
                 className="product__stock--out"
                 style={
-                  productQuantity === 0
+                  this.state.product.quantity === 0
                     ? { display: "flex" }
                     : { display: "none" }
                 }
@@ -97,7 +99,7 @@ export default class ProductSummary extends React.Component {
                 <div className="product__info-container--row3">
                   <div className="product__data-container">
                     <h4 className="product__data-label">Quantity</h4>
-                    <p className="product__data">{productQuantity}</p>
+                    <p className="product__data">{this.state.product.quantity}</p>
                   </div>
                 </div>
               </div>

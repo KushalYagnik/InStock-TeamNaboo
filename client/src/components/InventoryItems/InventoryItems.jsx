@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Kebab from '../InventoryKebabMenu/InventoryKebabMenu';
 import './InventoryItems.scss'
+
 export class InventoryItems extends Component {
     state = {
         productList: this.props.products[0]
