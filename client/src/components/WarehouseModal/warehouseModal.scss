@@ -114,7 +114,7 @@
         @include tabletSize{
         display: flex;
         flex-direction: row-reverse;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         
         }

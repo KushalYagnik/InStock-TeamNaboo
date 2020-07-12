@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import '../../App.scss';
 import '../LocationsSearch/LocationsSearch.scss';
 import RightArrow from "../../assets/Icons/SVG/Iconarrowright.svg";
+
 
 class LocationsSearch extends React.Component {
   state = { warehouses: [] }
