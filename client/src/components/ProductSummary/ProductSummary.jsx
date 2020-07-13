@@ -6,27 +6,63 @@ import Header from '../Header/Header';
 import './ProductSummary.scss';
 
 export default class ProductSummary extends React.Component {
-  constructor(props) {
-    super(props);
-
+  constructor(routeProps) {
+    super(routeProps);
+  
     this.state = {
-      product: []
+    product: {
+      "id": "JK2020FD7811201",
+      "name": "Scotch Tape",
+      "description": "A clear sticky on one side tape, for all your crafting needs",
+      "quantity": "400",
+      "lastOrdered": "12/01/2018",
+      "city": "Toronto",
+      "country": "Ontario",
+      "isInstock": false,
+      "categories": "Crafts, Office supplies, Paper",
+      "warehouseId": "W0"
+    },
+    warehouse: {
+      "id": "W0",
+      "name": "Punder Mifflin",
+      "address": {
+        "street": "123 Fake Street W",
+        "location": "Toronto, CAN"
+      },
+      "contact": {
+        "name": "Dimity Durian",
+        "position": "Regional Manager",
+        "phone": "416 679 4324",
+        "email": "DimoDurian@pundermifflin.com"
+      },
+      "inventoryCategories": "Paper, Crafts, Office supplies"
     }
-  }
+  }}
 
   componentDidMount() {
+    let inventoryId = this.props.match.params.inventoryid;
+    let warehouseId = this.props.match.params.warehouseid;
+
     axios
-      .get(`/inventory.json`)
+      .get(`http://localhost:8080/inventory/${inventoryId}`)
       .then(res => {
-        const filteredWidget = res.data.find((item, i) => {
-          return this.props.id === res.data[i].id
-        })
-        this.setState({ product: filteredWidget })
-      })
-      .catch(err => console.log("Errors: ", err))
+        this.setState({
+          product: res.data
+        });
+      });
+
+    axios
+      .get(`http://localhost:8080/warehouses/${warehouseId}`)
+      .then(res => {
+        this.setState({
+          warehouse: res.data
+        });
+      });
   }
 
   render() {
+    let productQuantity = this.state.product.quantity;
+
     return (
       <>
         <Header />
@@ -47,14 +83,16 @@ export default class ProductSummary extends React.Component {
               </div>
               <div
                 className="product__stock--in"
-                style={this.state.product.quantity > 0 ? { display: "flex" } : { display: "none" }}
+                style={
+                  productQuantity > 0 ? { display: "flex" } : { display: "none" }
+                }
               >
                 In Stock
             </div>
               <div
                 className="product__stock--out"
                 style={
-                  this.state.product.quantity === 0
+                  productQuantity === 0
                     ? { display: "flex" }
                     : { display: "none" }
                 }
@@ -99,7 +137,7 @@ export default class ProductSummary extends React.Component {
                 <div className="product__info-container--row3">
                   <div className="product__data-container">
                     <h4 className="product__data-label">Quantity</h4>
-                    <p className="product__data">{this.state.product.quantity}</p>
+                    <p className="product__data">{productQuantity}</p>
                   </div>
                 </div>
               </div>
