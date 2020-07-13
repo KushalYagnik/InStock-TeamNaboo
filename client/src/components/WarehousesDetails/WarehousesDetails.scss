@@ -2,9 +2,20 @@
 @import "../reuseable-styling/mixins";
 
 .details {
-  &-container {
+  &__container {
     padding: 16px;
     padding-top: 40px;
+
+    &--spacing{
+      @include tabletSize{
+        margin: auto 24px;
+        display: flex;
+        justify-content: space-around;
+      }
+      @include desktopSize{
+        margin: auto 48px;
+    }
+    }
   }
 
   &__left-arrow {
@@ -30,6 +41,7 @@
 
   &__text {
     line-height: 23px;
+    max-width: 300px;
   }
 
   &__phone {
@@ -39,9 +51,15 @@
 
   &__kebab {
     padding-top: 10px;
-    position: absolute;
+    position: fixed;
     right: 35px;
     height: 34px;
+    @include tabletSize{
+      margin: auto 24px;
+    }
+    @include desktopSize{
+      margin: auto 48px;
+    }
     
   }
 }
@@ -49,4 +67,13 @@
 .items-container {
   background-color: $colorlight;
   padding: 16px;
+  @include tabletSize{
+    margin: auto 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+  @include desktopSize{
+    margin: auto 48px;
+  }
 }
