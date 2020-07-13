@@ -92,7 +92,7 @@ export default class ProductSummary extends React.Component {
               <div
                 className="product__stock--out"
                 style={
-                  productQuantity === 0
+                  productQuantity == 0
                     ? { display: "flex" }
                     : { display: "none" }
                 }

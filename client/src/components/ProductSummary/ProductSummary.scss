@@ -3,13 +3,16 @@
 
 .product {
     padding: 0 1rem;
+    margin-top: 2rem;
 
     @include tabletSize {
         padding: 0 1.5rem;
+        margin-top: 1rem;
     }
 
     @include desktopSize {
         padding: 0 11.25rem;
+        margin-top: 1rem;
     }
 
     &__header-container {
@@ -24,18 +27,15 @@
 
         &--title {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            width: 11.25rem;
 
             @include tabletSize {
                 margin-right: 1.5rem;
-                width: 15rem;
             }
 
             @include desktopSize {
                 margin-right: 1.5rem;
-                width: 15rem;
             }
         }
     }
@@ -43,6 +43,7 @@
     &__back-arrow {
         height: 1.5rem;
         width: 1rem;
+        margin-right: 1rem;
     }
 
     &__name {
@@ -56,12 +57,14 @@
             margin: 3rem 0 2.5rem 0;
             font-size: 2.25rem;
             line-height: 2.75rem;
+            padding-bottom: 0.5rem;
         }
 
         @include desktopSize {
             margin: 3rem 0 2.5rem 0;
             font-size: 2.25rem;
             line-height: 2.75rem;
+            padding-bottom: 0.5rem;
         }
     }
 
@@ -77,16 +80,37 @@
             font-family: "Avenir Next LT Pro";
             font-weight: 400;
             font-size: 0.75rem;
+            margin-top: 1rem;
+
+            @include tabletSize {
+                margin-top: 0;
+            }
+
+            @include desktopSize {
+                margin-top: 0;
+            }
         }
 
         &--out {
             background-color: $colordark;
             border-radius: 0.25rem;
             color: $colordarkest;
-            padding: 0.25rem 2rem;
+            width: 5.5rem;
+            height: 1.5rem;
+            justify-content: center;
+            align-items: center;
             font-family: "Avenir Next LT Pro";
             font-weight: 400;
             font-size: 0.75rem;
+            margin-top: 1rem;
+
+            @include tabletSize {
+                margin-top: 0;
+            }
+
+            @include desktopSize {
+                margin-top: 0;
+            }
         }
     }
 
