@@ -1,0 +1,273 @@
+@import "../reuseable-styling/fonts";
+@import "../reuseable-styling/mixins";
+
+.product {
+    padding: 0 1rem;
+    margin-top: 2rem;
+
+    @include tabletSize {
+        padding: 0 1.5rem;
+        margin-top: 1rem;
+    }
+
+    @include desktopSize {
+        padding: 0 11.25rem;
+        margin-top: 1rem;
+    }
+
+    &__header-container {
+        &--top {
+            @include tabletSize {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+            }
+        }
+
+        &--title {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            @include tabletSize {
+                margin-right: 1.5rem;
+            }
+
+            @include desktopSize {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__back-arrow {
+        height: 1.5rem;
+        width: 1rem;
+        margin-right: 1rem;
+    }
+
+    &__name {
+        font-family: "Avenir Next LT Pro";
+        font-weight: 700;
+        color: $colordarkest;
+        font-size: 1.625rem;
+        line-height: 2rem;
+
+        @include tabletSize {
+            margin: 3rem 0 2.5rem 0;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            padding-bottom: 0.5rem;
+        }
+
+        @include desktopSize {
+            margin: 3rem 0 2.5rem 0;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &__stock {
+        &--in {
+            background-color: $colorCTAgreen;
+            border-radius: 0.25rem;
+            color: $colorlightest;
+            width: 5.5rem;
+            height: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            font-family: "Avenir Next LT Pro";
+            font-weight: 400;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+
+            @include tabletSize {
+                margin-top: 0;
+            }
+
+            @include desktopSize {
+                margin-top: 0;
+            }
+        }
+
+        &--out {
+            background-color: $colordark;
+            border-radius: 0.25rem;
+            color: $colordarkest;
+            width: 5.5rem;
+            height: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            font-family: "Avenir Next LT Pro";
+            font-weight: 400;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+
+            @include tabletSize {
+                margin-top: 0;
+            }
+
+            @include desktopSize {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__summary {
+        @include tabletSize {
+            border-top: 0.125rem solid $colordark;
+            border-bottom: 0.125rem solid $colordark;
+            margin-bottom: 2.5rem;
+        }
+
+        @include desktopSize {
+            border-top: 0.125rem solid $colordark;
+            border-bottom: 0.125rem solid $colordark;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+    
+    &__item-description {
+        margin: 2rem 0;
+
+        @include tabletSize {
+            margin: 2.5rem 0;
+        }
+
+        @include desktopSize {
+            margin: 2.5rem 0;
+            width: 50%;
+        }
+    }
+
+    &__info {
+        &-container {
+            @include tabletSize {
+                display: flex;
+                flex-direction: column;
+            }
+
+            @include desktopSize {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &--with-categories {
+                @include desktopSize {
+                    width: 50%;
+                    margin-top: 2.5rem;
+                }
+            }
+
+            &--row1, &--row2, &--row3 {
+                @include tabletSize {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
+                    margin: 0 0 3.5rem 0;
+                }
+
+                @include desktopSize {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
+                    margin: 0 0 3.5rem 0;
+                }
+            }
+        }
+    }
+
+    &__data {
+        color: $colordarkest;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-family: "Avenir Next LT Pro";
+        font-weight: 400;
+        margin: 0 0 1.5rem 0;
+
+        @include tabletSize {
+            margin: 0;
+        }
+
+        @include desktopSize {
+            margin: 0;
+        }
+
+        &-container {
+            @include tabletSize {
+                width: 50%;
+            }
+
+            @include desktopSize {
+                width: 50%;
+            }
+        }
+
+        &-label {
+            color: $colordark;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            line-height: 1.25rem;
+            font-family: "Avenir Next LT Pro";
+            font-weight: 500;
+            margin: 0 0 0.5rem 0;
+
+            @include desktopSize {
+                margin: 0 0 1rem 0;;
+            }
+        }
+    }
+
+    &__categories {
+        margin-bottom: 2.5rem;
+
+        @include tabletSize {
+            margin-bottom: 3rem;
+        }
+
+        @include desktopSize {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__button {
+        &-container {
+            @include tabletSize {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            @include desktopSize {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        &--edit {
+            width: 100%;
+            height: 3rem;
+            text-transform: uppercase;
+            background-color: $colorCTAblue;
+            color: $colorlightest;
+            font-family: "Avenir Next LT Pro";
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 0.25rem;
+            margin: 0 0 1rem 0;
+
+            @include tabletSize {
+                width: 10rem;
+            }
+
+            @include desktopSize {
+                width: 10rem;
+            }
+        }
+    }
+}

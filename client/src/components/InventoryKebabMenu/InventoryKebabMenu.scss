@@ -1,0 +1,41 @@
+@import '../reuseable-styling/fonts';
+@import '../reuseable-styling/mixins';
+
+.kebab-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__ellipsis {
+        background: none;
+        border: none;
+    }
+
+    &__remove-container {
+        margin-top: 0.25rem;
+    }
+
+    &__remove-button {
+        background: none;
+        font-family: 'Avenir Next LT Pro';
+        font-weight: 400;
+        color: $colordarkest;
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 0.8125rem;
+        box-shadow: 0 2rem 2rem $colormid;
+        border: 0.125rem solid $colormid;
+
+        @include tabletSize {
+            width: 10rem;
+            font-size: 0.875rem;
+        }
+
+        @include desktopSize {
+            width: 10rem;
+            font-size: 0.875rem;
+        }
+    }
+}
